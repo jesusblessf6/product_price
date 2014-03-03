@@ -16,10 +16,49 @@
     		<div class="panel panel-info">
     			<div class="panel-heading text-center">一级市场</div>
     			<table class="table table-hover table-striped">
-    				
+          <%
+            if(markets){
+              for(var i = 0; i < markets.length; i ++){
+          %>
+            <tr>
+              <td><a href="/market/<%=markets[i].crm_id%>"><%= markets[i].name %></a></td>
+            </tr>
+          <%
+              }
+            }
+          %>  
     			</table>
     		</div>
     	</div>
+    	<div class="col-md-2">
+	    	<div class="panel panel-success">
+	    		<div class="panel-heading text-center">二级市场</div>
+	    		<table class="table table-hover table-striped">
+    			<%
+            if(submarkets){
+              for(var i = 0; i < submarkets.length; i ++){
+          %>
+            <tr><td><a href="/submarket/<%= submarkets[i].crm_id%>"><%=submarkets[i].name%></a></td></tr>
+          <%
+              }
+            }
+          %>
+    			</table>
+	    	</div>
+	    </div>
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+
+          </div>
+          <div class="panel-body">
+
+          </div>
+          <table class="table">
+            
+          </table>
+        </div>
+      </div>
     </div>
   </body>
 </html>
