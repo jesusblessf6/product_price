@@ -1,0 +1,47 @@
+commodities :
+
+/* 0 */
+{
+    "_id" : ObjectId("53144ce31434908a2fc2e479"),
+    "name" : ",6.5（Q195）,迁安九江",
+    "web_token" : "|拉丝材|Q195|热轧|Φ6.5|迁安九江|",
+    "crm_id" : 9974,
+    "submarket_crm_id" : 693,
+    "field_name_0" : "钢种",
+    "field_name_1" : "牌号",
+    "field_name_2" : "工艺/交货状态",
+    "field_name_3" : "规格",
+    "field_name_4" : "钢厂/产地",
+    "field_count" : 5
+}
+
+crawlers :
+
+/* 0 */
+{
+    "_id" : ObjectId("53144ea61434908a2fc2e47a"),
+    "name" : "shlasi",
+    "full_path" : "/crawlers/lasi/shlasi_crawler",
+    "target_type" : "submarkets",
+    "target_crm_id" : 693
+}
+
+markets :
+
+/* 0 */
+{
+    "_id" : ObjectId("5313f3b192ea054845345151"),
+    "name" : "拉丝",
+    "crm_id" : 23
+}
+
+submarkets:
+/* 0 */
+{
+    "_id" : ObjectId("5313f46292ea054845345152"),
+    "name" : "上海拉丝",
+    "crm_id" : 693,
+    "market_crm_id" : 23,
+    "crawler_name" : "shlasi",
+    "last_updated" : null
+}
