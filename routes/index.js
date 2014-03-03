@@ -1,22 +1,28 @@
 /**/
 
-module.exports = function(req, res){
-	
-	var conn = require('../models/db').conn;
-	var page_data = {
-		title : '价格自动采编',
-		markets : null, 
-		submarkets : null,
-		commodities: null
-	};
+module.exports = function(req, res) {
 
-	conn.collection('markets').find({}, {sort : [['crm_id', 1]]}).toArray(function(err, results){
-		if(err){
-			console.log(err);
-		}else{
-			page_data.markets = results;
-		}
-		res.render('index', page_data);
-	});
+    var conn = require('../models/db').conn;
+    var page_data = {
+        title: '价格自动采编',
+        markets: null,
+        submarkets: null,
+        commodities: null,
+        current_market: null,
+        current_submarket: null
+    };
+
+    conn.collection('markets').find({}, {
+        sort: [
+            ['crm_id', 1]
+        ]
+    }).toArray(function(err, results) {
+        if (err) {
+            console.log(err);
+        } else {
+            page_data.markets = results;
+        }
+        res.render('index', page_data);
+    });
 
 };
